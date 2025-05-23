@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивы</title>
+    <style>
+    
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(25% - 20px); /* 4 карточки в ряд */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;  
+    object-fit: cover; /* обрез изображ */
+    border-radius: 5px; 
+}
+        header,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative; /* Для правильного позиционирования h1::before и h1::after */
+        }
+
+h1 {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-bottom: 20px;
+            font-size: 3em;
+            font-style: italic;
+        }
+
+        /* Убираем полосы у h1 с классом no-stripes */
+        h1.no-stripes::before,
+        h1.no-stripes::after {
+            content: none;
+        }
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '\265A';
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+            border-bottom: 1px dotted #8b4513;
+            transition: color 0.3s ease;
+        }
+
+        p,
+        li {
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+                        margin-top: 40px;
+        }
+        /* Украшение заголовка */
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }h1 {
+            text-align: center;
+            color: #2E2E2E ; /* Синий */
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень заголовка */
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap; /* карт в одной строке */
+            padding: 10px;
+            gap: 20px; /* Отступы между карт */
+            overflow-x: auto; /* Позволяет прокручивать карточки, если они не помещаются */
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            width: 220px; /* Фиксированная ширина карточки */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение содержимого карточки */
+            align-items: center; /* Центрирование содержимого карточки */
+            flex-shrink: 0; /* Не позволяет карточкам сжиматься */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            height: auto;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        padding: 20px; /* Уменьшаем отступы */
+    }
+
+    h1,
+    {
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    h2{
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    .container {
+        flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+        justify-content: center; /* Центрируем карточки */
+    }
+
+    .card {
+        width: 100%; /* Ширина карточки 100% на мобильных устройствах */
+        max-width: 300px; /* Максимальная ширина карточки */
+        margin: 10px; /* Отступы между карточками */
+    }
+
+    p,
+    li {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+}
+/* Стилизация полосы прокрутки для WebKit браузеров (Chrome, Safari) */
+.container::-webkit-scrollbar {
+    width: 12px; /* Ширина полосы прокрутки */
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(224, 216, 160, 0.3); /* Более низкая прозрачность для фона */
+    border-radius: 10px; /* Скругление углов трека */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(168, 159, 93, 0.5); /* Более низкая прозрачность для ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 124, 58, 0.6); /* Цвет при наведении с измененной прозрачностью */
+}
+
+/* Стилизация полосы прокрутки для Firefox */
+.container {
+    scrollbar-width: thin; /* Узкая полоса прокрутки */
+    scrollbar-color: rgba(168, 159, 93, 0.5) rgba(224, 216, 160, 0.3); /* Цвет ползунка и фона с измененной прозрачностью */
+}
+    </style>
+</head>
+<body>
+    <h1>Тесты</h1>
+<div class="container">
+    <div class="card">
+        <h2>Ваш репутация как монарха</h2>
+        <a href="https://pikuco.ru/tests/122043/">Пройти тест</a>
+    </div>
+    <div class="card"> 
+        <h2>История Великобритании</h2>
+        <a href="https://solncesvet.ru/tests/test-istoriya-velikobritanii/">Пройти тест</a>
+    </div>      
+    <div class="card">
+
+        <h2>Британские монархи - кто ты из них?</h2>
+        <a href="https://diletant.media/personality_test/28774759/">Пройти тест</a>
+    </div>
+    <div class="card">
+        <h2>Угадай правителя по описанию</h2>
+        <a href="https://dzen.ru/a/ZofELttpsSGmJopB">Пройти тест</a></div></div>
+        <div class="container">
+        <div class="card">
+        <h2>Кто ты из королевской семьи?</h2>
+        <a href="https://peopletalk.ru/article/test-kto-ty-iz-britanskoj-korolevskoj-semi/">Пройти тест</a>
+    </div>
+        <div class="card">
+        <h2>Короли и королевы Великобритании</h2>
+        <a href="https://moeobrazovanie.ru/viktoriny/test_po_angliyskomu_10_klass_koroli.html?test_start&operation=exrc_show">Пройти тест</a>
+    </div>
+        <div class="card">
+        <h2>Правители Англии</h2>
+        <a href="https://obrazovaka.ru/test/praviteli-anglii-spisok-po-istorii.html">Пройти тест</a>
+    </div>
+    
+    <div class="card">
+        <h2>Викторина "Монархи Великобритании"</h2>
+        <a href="https://www.sporcle.com/games/theflorastewart/monarchs-of-great-britain">Пройти тест</a>
+        </div>        </div>
+        <h1>Информационные видео</h1>
+        <div class="container">
+    <div class="card">
+        <h2>Шесть королев Генриха VIII</h2>
+        <a href="https://video-preview.s3.yandex.net/KHXKsQAAAAA.mp4">Смотреть</a>
+    </div>
+    <div class="card">
+        <h2>От Вильгельма до Елизаветы II</h2>
+        <a href="https://video-preview.s3.yandex.net/IqOXNAIAAAA.mp4">Смотреть</a>
+    </div>
+    <div class="card">
+        <h2>Темная сторона британской монархии</h2>
+        <a href="https://video-preview.s3.yandex.net/pNI0FQAAAAA.mp4">Смотреть</a>
+    </div>
+    <div class="card">
+        <h2>Ранние королевы Англии</h2>
+        <a href="https://video-preview.s3.yandex.net/bSdWWQIAAAA.mp4">Смотреть</a>
+    </div>  </div>  <div class="container">
+    <div class="card">
+        <h2>Генеалогическое древо британской монархии</h2>
+        <a href="https://video-preview.s3.yandex.net/kYiHIgIAAAA.mp4">Смотреть</a>
+    </div>
+        <div class="card">
+        <h2>История двух сестер правительниц</h2>
+        <a href="http://vk.com/video-72466009_456239114">Смотреть</a>
+    </div>
+        <div class="card">
+        <h2>Вильгельм Завоеватель - документальный фильм</h2>
+        <a href="https://video-preview.s3.yandex.net/gf81TwIAAAA.mp4">Смотреть</a>
+    </div>
+        <div class="card">
+        <h2>Стюарты. Прирожденные правители</h2>
+        <a href="https://video-preview.s3.yandex.net/7Rg9QgIAAAA.mp4">Смотреть</a>
+    </div>
+</body>
+</html>

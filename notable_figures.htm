@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знаменитые личности Великобритании</title>
+    <style>
+    
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAF0;
+            color: #333;
+            line-height: 1.7;
+            animation: bodyFadeIn 2s ease-in-out forwards;
+        }
+.card img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;  
+    object-fit: cover; /* обрез изображ */
+    border-radius: 5px; 
+}
+        header,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative; /* Для правильного позиционирования h1::before и h1::after */
+        }
+
+h1 {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-bottom: 20px;
+            font-size: 3em;
+            font-style: italic;
+        }
+
+        /* Убираем полосы у h1 с классом no-stripes */
+        h1.no-stripes::before,
+        h1.no-stripes::after {
+            content: none;
+        }
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '\265A';
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+            border-bottom: 1px dotted #8b4513;
+            transition: color 0.3s ease;
+        }
+
+        p,
+        li {
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+                        margin-top: 40px;
+        }
+        /* Украшение заголовка */
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }h1 {
+            text-align: center;
+            color: #2E2E2E ; /* Синий */
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень заголовка */
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap; /* карт в одной строке */
+            padding: 10px;
+            gap: 20px; /* Отступы между карт */
+            overflow-x: auto; /* Позволяет прокручивать карточки, если они не помещаются */
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            width: 220px; /* Фиксированная ширина карточки */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение содержимого карточки */
+            align-items: center; /* Центрирование содержимого карточки */
+            flex-shrink: 0; /* Не позволяет карточкам сжиматься */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            height: auto;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        padding: 20px; /* Уменьшаем отступы */
+    }
+
+    h1,
+    {
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    h2{
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    .container {
+        flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+        justify-content: center; /* Центрируем карточки */
+    }
+
+    .card {
+        width: 100%; /* Ширина карточки 100% на мобильных устройствах */
+        max-width: 300px; /* Максимальная ширина карточки */
+        margin: 10px; /* Отступы между карточками */
+    }
+
+    p,
+    li {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+}
+/* Стилизация полосы прокрутки для WebKit браузеров (Chrome, Safari) */
+.container::-webkit-scrollbar {
+    width: 12px; /* Ширина полосы прокрутки */
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(224, 216, 160, 0.3); /* Более низкая прозрачность для фона */
+    border-radius: 10px; /* Скругление углов трека */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(168, 159, 93, 0.5); /* Более низкая прозрачность для ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 124, 58, 0.6); /* Цвет при наведении с измененной прозрачностью */
+}
+
+/* Стилизация полосы прокрутки для Firefox */
+.container {
+    scrollbar-width: thin; /* Узкая полоса прокрутки */
+    scrollbar-color: rgba(168, 159, 93, 0.5) rgba(224, 216, 160, 0.3); /* Цвет ползунка и фона с измененной прозрачностью */
+}
+    </style>
+</head>
+<body>
+
+<h1>Норманская династия</h1>
+
+<div class="container">
+    <div class="card">
+        <h2>Вильгельм I</h2>
+        <a href="vilg1.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Вильгельм II</h2>
+        <a href="vilg2.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Генрих I</h2>
+        <a href="gen1.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Стефан Блуаский</h2>
+        <a href="stefbluask.htm">Узнать больше</a>
+    </div>
+    </div>
+<h1>Династия Плантагенетов</h1>
+<div class="container">
+    <div class="card">
+        <h2>Генрих II</h2>
+        <a href="gen2.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Ричард I</h2>
+        <a href="rich1.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Иоанн Безземельный</h2>
+        <a href="ioanbezzem.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Генрих III</h2>
+        <a href="gen3.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Эдуард I</h2>
+        <a href="ed1.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Эдуард II</h2>
+        <a href="ed2.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Эдуард III</h2>
+        <a href="ed3.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Ричард II</h2>
+        <a href="rich2.htm">Узнать больше</a>
+    </div>
+    </div>
+    <h1>Династия Ланкастеров</h1>
+    <div class="container">
+                <div class="card">
+        <h2>Генрих IV</h2>
+        <a href="gen4.htm">Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Генрих V</h2>
+        <a href="gen5.htm">Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Генрих VI</h2>
+        <a href="gen6.htm">Узнать больше</a>
+    </div>
+    </div>
+        <h1>Династия Йорков</h1>
+     <div class="container">
+        <div class="card">
+        <h2>Эдуард IV</h2>
+        <a href="ed4.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Эдуард V</h2>
+        <a href="ed5.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Ричард III</h2>
+        <a href="rich3.htm" >Узнать больше</a>
+    </div>
+    </div>
+    <h1>Династия Тюдоров</h1>
+    <div class="container">
+    <div class="card">
+        <h2>Генрих VII</h2>
+        <a href="gen7.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Генрих VIII</h2>
+        <a href="gen8.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Эдуард VI</h2>
+        <a href="ed6.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Леди Джейн Грей</h2>
+        <a href="jeingrey.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Елизавета  I</h2>
+        <a href="eliz1.htm" >Узнать больше</a>
+    </div>
+    </div>
+    <h1>Династия Стюартов</h1>
+    <div class="container">
+    <div class="card">
+        <h2>Яков I</h2>
+        <a href="yakov1.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Карл I</h2>
+        <a href="karl1.htm" >Узнать больше</a>
+    </div>
+</div>
+    <h1>Ганноверская династия</h1>
+        <div class="container">
+    <div class="card">
+        <h2>Георг I</h2>
+        <a href="georg1.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Георг II</h2>
+        <a href="georg2.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Георг III</h2>
+        <a href="georg3.htm" >Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Георг IV</h2>
+        <a href="georg4.htm">Узнать больше</a>
+    </div>    <div class="card">
+        <h2>Вильгельм IV</h2>
+        <a href="vilg4.htm" >Узнать больше</a>
+    </div>
+    </div>
+<h1>Саксен-Кобург-Готская династия (Виндзоры)</h1>
+    <div class="container">
+    <div class="card">
+        <h2>Эдуард VII</h2>
+        <a href="ed7.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Георг V</h2>
+        <a href="georg5.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Эдуард VIII</h2>
+        <a href="ed8.htm">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Георг VI</h2>
+        <a href="georg6.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Елизавета II</h2>
+        <a href="eliz2.htm" >Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Карл III</h2>
+        <a href="karl3.htm">Узнать больше</a>
+    </div>
+        <div class="card">
+        <h2>Вильгельм III</h2>
+        <a href="vilg3.htm">Узнать больше</a>
+    </div>
+    </div>
+</body>
+</html>
