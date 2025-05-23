@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знаменитые личности Великобритании</title>
+    <style>
+    
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(25% - 20px); /* 4 карточки в ряд */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;  
+    object-fit: cover; /* обрез изображ */
+    border-radius: 5px; 
+}
+        header,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative; /* Для правильного позиционирования h1::before и h1::after */
+        }
+
+h1 {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-bottom: 20px;
+            font-size: 3em;
+            font-style: italic;
+        }
+
+        /* Убираем полосы у h1 с классом no-stripes */
+        h1.no-stripes::before,
+        h1.no-stripes::after {
+            content: none;
+        }
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '\265A';
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+        }
+
+        a {
+            color: #8b4513;
+            text-decoration: none;
+            border-bottom: 1px dotted #8b4513;
+            transition: color 0.3s ease;
+        }
+
+        p,
+        li {
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+                        margin-top: 40px;
+        }
+        /* Украшение заголовка */
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }h1 {
+            text-align: center;
+            color: #2E2E2E ; /* Синий */
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень заголовка */
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap; /* карт в одной строке */
+            padding: 10px;
+            gap: 20px; /* Отступы между карт */
+            overflow-x: auto; /* Позволяет прокручивать карточки, если они не помещаются */
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            width: 220px; /* Фиксированная ширина карточки */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение содержимого карточки */
+            align-items: center; /* Центрирование содержимого карточки */
+            flex-shrink: 0; /* Не позволяет карточкам сжиматься */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            height: auto;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        padding: 20px; /* Уменьшаем отступы */
+    }
+
+    h1,
+    {
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    h2{
+        font-size: 0.1em; /* Уменьшаем размер заголовка */
+    }
+    .container {
+        flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+        justify-content: center; /* Центрируем карточки */
+    }
+
+    .card {
+        width: 100%; /* Ширина карточки 100% на мобильных устройствах */
+        max-width: 300px; /* Максимальная ширина карточки */
+        margin: 10px; /* Отступы между карточками */
+    }
+
+    p,
+    li {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+}
+/* Стилизация полосы прокрутки для WebKit браузеров (Chrome, Safari) */
+.container::-webkit-scrollbar {
+    width: 12px; /* Ширина полосы прокрутки */
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(224, 216, 160, 0.3); /* Более низкая прозрачность для фона */
+    border-radius: 10px; /* Скругление углов трека */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(168, 159, 93, 0.5); /* Более низкая прозрачность для ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 124, 58, 0.6); /* Цвет при наведении с измененной прозрачностью */
+}
+
+/* Стилизация полосы прокрутки для Firefox */
+.container {
+    scrollbar-width: thin; /* Узкая полоса прокрутки */
+    scrollbar-color: rgba(168, 159, 93, 0.5) rgba(224, 216, 160, 0.3); /* Цвет ползунка и фона с измененной прозрачностью */
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Война Алой и Белой розы</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Банк Англии</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Белая башня</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Битва при Стерлинг-Бридж</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    </div>
+    <div class="container">
+    <div class="card">
+        <h2>Всеобщая забастовка</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Великая выставка</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Датское завоевание</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Дейли телеграф</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div></div>
+    <div class="container">
+    <div class="card">
+        <h2>Вереенигский мирный договор</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Закон о народном представительстве</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Находка ихтиозавра</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Йоркский мирный договор</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div></div>
+    <div class="container">
+    <div class="card">
+        <h2>Отмена смертной казни</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Закон об отмене рабства</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Пороховой Заговор</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Хлебные законы</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div></div>
+    <div class="container">
+    <div class="card">
+        <h2>Книга Страшного суда</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Конституции Кларендона</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+
+        <h2>Крестьянский бунт</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    <div class="card">
+        <h2>Закон об образовании</h2>
+        <a href="" target="_blank">Узнать больше</a>
+    </div>
+    </div>
+</body>
+</html>
